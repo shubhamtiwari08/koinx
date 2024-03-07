@@ -156,7 +156,7 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="w-[60%] h-max bg-white mx-4 mt-5 rounded-md p-4">
+      <div className="w-[60%] h-max bg-white mx-4 mt-5 border-b-2 rounded-md p-4">
         <h2 className="text-xl text-black font-bold mb-5">About Bitcoin</h2>
         <h3 className="text-black font-bold mb-2">What is Bitcoin?</h3>
         <p className="border-b-2 pb-4">
@@ -164,12 +164,52 @@ function Home() {
           Exercitationem accusantium neque a molestiae nemo, delectus laudantium
           sed aspernatur? Molestias atque reprehenderit repellat quibusdam
           rerum, voluptatum cum dolores suscipit sit nostrum libero. Accusantium
-          qui incidunt, quod odio voluptas consequatur officiis! 
+          qui incidunt, quod odio voluptas consequatur officiis!
         </p>
         <h3 className="text-black font-bold my-2">Lorem ipsum dolor sit.</h3>
+        <p className="  pb-4 font-semibold text-gray-800">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+          Exercitationem accusantium neque a molestiae nemo, delectus laudantium
+          sed aspernatur? Molestias atque reprehenderit repellat quibusdam
+          rerum, voluptatum cum dolores suscipit sit nostrum libero. Accusantium
+          qui incidunt, quod odio voluptas consequatur officiis!
+        </p>
+        <p className="  pb-4 font-semibold text-gray-800">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+          Exercitationem accusantium neque a molestiae nemo, delectus laudantium
+          sed aspernatur? Molestias atque reprehenderit repellat quibusdam
+          rerum, voluptatum cum dolores suscipit sit nostrum libero. Accusantium
+          qui incidunt, quod odio voluptas consequatur officiis!
+        </p>
+        <p className="  pb-4 font-semibold text-gray-800 border-b-2 ">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+          Exercitationem accusantium neque a molestiae nemo, delectus laudantium
+          sed aspernatur?{" "}
+        </p>
+        <h2 className="text-2xl text-black font-bold my-5">
+          Already Holding Bitcoin?
+        </h2>
+        <div className="flex gap-4">
+          <CheckNowCard title={"Calculate your Profits"} color={"blue"} />
+          <CheckNowCard title={"Calculate your tax liability"} color={"red"} />
+        </div>
       </div>
-
-      <CheckNowCard />
+      <div className="w-[60%] h-max bg-white mx-4 mt-5 border-b-2 rounded-md p-4">
+        <h2 className="text-2xl text-black font-bold my-5">Tokenomics</h2>
+        <h3 className="text-black text-xl font-bold my-2">
+          Initial Distribution
+        </h3>
+        <div>pie chart</div>
+        <p className="font-semibold text-gray-600">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
+          inventore laudantium adipisci voluptate sint, officia aspernatur,
+          tenetur fugit nesciunt soluta, hic dolor. Sunt blanditiis aperiam
+          voluptate sint rerum, voluptatibus consequuntur recusandae, vitae
+          explicabo laborum dicta doloribus, illo reiciendis voluptates optio?
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, vitae?
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia magnam ut aliquid eius aperiam ipsa voluptatibus error rerum aut quidem?
+        </p>
+      </div>
     </div>
   );
 }
