@@ -28,7 +28,7 @@ const Carousel = ({ items }) => {
   };
 
   return (
-    <div className="relative w-full h-64 overflow-hidden">
+    <div className="relative w-[100%] h-64 overflow-hidden">
       {items.map((item, index) => (
         <div
           key={index}
@@ -41,7 +41,7 @@ const Carousel = ({ items }) => {
           }`}
         >
           {/* Your content here */}
-          <div className="w-[30%] h-3/4 bg-blue-100 rounded-lg p-4 flex items-start gap-x-4">
+          <div className="w-[70%] h-3/4 bg-blue-100 rounded-lg p-4 flex items-start gap-x-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <div className="w-10 h-10 bg-blue-400 rounded-full flex-shrink-0"></div>
