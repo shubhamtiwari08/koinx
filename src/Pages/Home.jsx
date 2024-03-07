@@ -4,8 +4,15 @@ import CheckNowCard from "../components/CheckNowCard";
 import Carousel from "../components/Carousel";
 import TradingViewWidget from "../components/TradingViewWidget";
 import { Tabs } from "../components/Tabs";
+import UserCard from "../components/UserCard";
 
 function Home() {
+
+    const users = [
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D",
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D",
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D",
+    ]
   const items = [
     {
       title: "Lorem ipsum dolor sit amet consectetur.",
@@ -207,8 +214,19 @@ function Home() {
           voluptate sint rerum, voluptatibus consequuntur recusandae, vitae
           explicabo laborum dicta doloribus, illo reiciendis voluptates optio?
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, vitae?
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia magnam ut aliquid eius aperiam ipsa voluptatibus error rerum aut quidem?
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia
+          magnam ut aliquid eius aperiam ipsa voluptatibus error rerum aut
+          quidem?
         </p>
+      </div>
+      <div className="w-[60%] h-max bg-white mx-4 mt-5 border-b-2 rounded-md p-4">
+        <h2 className="text-2xl text-black font-bold my-5">Team</h2>
+        <p className="font-semibold text-gray-600">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
+          inventore laudantium adipisci voluptate sint, officia aspernatur,
+          tenetur fugit nesciunt soluta, hic dolor. Sunt blanditiis aperiam.
+        </p>
+        {users.map(data => <UserCard src={data}/>)}
       </div>
     </div>
   );
