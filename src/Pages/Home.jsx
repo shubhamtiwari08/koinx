@@ -7,6 +7,7 @@ import { Tabs } from "../components/Tabs";
 import UserCard from "../components/UserCard";
 import SentimentCarousel from "../components/RootLayout/SentimentCarousel";
 import FooterGraph from "../components/RootLayout/FooterGraph";
+import DonutChart from "../components/DonutChart";
 
 function Home() {
   const [data, setData] = useState([]);
@@ -57,7 +58,7 @@ function Home() {
 
           <div className="w-[95%] h-max bg-white mx-4 rounded-md p-4">
             <h2 className="text-xl text-black font-bold">Performance</h2>
-            <div>progress bars 2</div>
+            <div></div>
             <div>
               <h3 className="font-bold text-gray-600">Fundamentals</h3>
               <div className="flex justify-between pr-10">
@@ -233,7 +234,9 @@ function Home() {
             <h3 className="text-black text-xl font-bold my-2">
               Initial Distribution
             </h3>
-            <div>pie chart</div>
+            <div>
+                <DonutChart/>
+            </div>
             <p className="font-semibold text-gray-600">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
               inventore laudantium adipisci voluptate sint, officia aspernatur,
