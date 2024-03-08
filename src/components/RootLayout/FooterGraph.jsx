@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
+import './footerGraph.css'
 
 function FooterGraph() {
   const [data, setData] = useState([]);
@@ -31,7 +32,7 @@ function FooterGraph() {
       <div className="slider-container">
         <Slider {...settings}>
           {data.map((coin) => (
-            <div className="w-20 h-20 bg-white border-2 rounded-md p-2 !mx-4">
+            <div className="w-32 h-36 bg-white border-2 rounded-md p-4">
               <div className="flex gap-1">
                 <img
                   src={coin.item.small}
@@ -43,7 +44,7 @@ function FooterGraph() {
               <span className="font-semibold text-xl">
                   {coin.item.data.price}
                 </span>
-              <img key={coin.item.id} src={coin.item.data.sparkline} />
+              <img key={coin.item.id} src={coin.item.data.sparkline} className="mx-auto" />
             </div>
           ))}
         </Slider>

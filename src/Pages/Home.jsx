@@ -220,10 +220,11 @@ function Home() {
               Already Holding Bitcoin?
             </h2>
             <div className="flex gap-4">
-              <CheckNowCard title={"Calculate your Profits"} color={"blue"} />
+              <CheckNowCard title={"Calculate your Profits"} color={"blue"} secondColor={"green"} />
               <CheckNowCard
                 title={"Calculate your tax liability"}
                 color={"red"}
+                secondColor={"yellow"}
               />
             </div>
           </div>
@@ -271,8 +272,8 @@ function Home() {
               alt="flyer-img"
               className="w-40 mx-auto"
             />
-            <button className="px-2 py-1 bg-white rounded-lg font-semibold my-4">
-              Get Started For Free{" "}
+            <button className="px-4 py-2 bg-white rounded-lg font-semibold my-4">
+              Get Started For Free &#8594; {" "}
             </button>
           </div>
           <div className="w-full h-max bg-white  mt-5 border-b-2 rounded-md p-4">
@@ -281,7 +282,12 @@ function Home() {
             </h2>
             <div>
               {data.map((coin) => (
-                <p>{coin.item.name}</p>
+                <div className="flex gap-1 my-3">
+                    <img src={coin.item.small} alt="logo" className="w-5 rounded-full" />
+                     <p className="font-semibold text-sm">{coin.item.name} ({coin.item.symbol})</p>
+
+                </div>
+               
               ))}
             </div>
           </div>

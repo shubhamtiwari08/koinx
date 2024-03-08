@@ -3,6 +3,7 @@
 }
 
 .slick-slide{
+    width: 13rem;
     margin: 0 0.5rem;
     
 }
@@ -10,3 +11,4 @@
 ul.slick-dots{
     display: none!important;
 }
+
