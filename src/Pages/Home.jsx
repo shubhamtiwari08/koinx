@@ -1,18 +1,18 @@
 import React from "react";
 import ProgressBar from "../components/ProgressBar";
 import CheckNowCard from "../components/CheckNowCard";
-import Carousel from "../components/Carousel";
+
 import TradingViewWidget from "../components/TradingViewWidget";
 import { Tabs } from "../components/Tabs";
 import UserCard from "../components/UserCard";
+import SentimentCarousel from "../components/RootLayout/SentimentCarousel";
 
 function Home() {
-
-    const users = [
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D",
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D",
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D",
-    ]
+  const users = [
+    "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D",
+    "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D",
+    "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D",
+  ];
   const items = [
     {
       title: "Lorem ipsum dolor sit amet consectetur.",
@@ -137,8 +137,9 @@ function Home() {
       </div>
       <div className="w-[60%] h-max bg-white mx-4 rounded-md p-4 mt-5">
         <h2 className="text-xl text-black font-bold">Performance</h2>
-
-        <Carousel items={items} />
+        <h3 className="font-bold text-gray-600">Key Events</h3>
+        <SentimentCarousel/>
+        
         <h3 className="font-bold text-gray-600">Analysts Estimates</h3>
         <div className="flex">
           <div className="w-32 h-32 rounded-full bg-green-100 flex items-center justify-center mt-5">
@@ -226,7 +227,9 @@ function Home() {
           inventore laudantium adipisci voluptate sint, officia aspernatur,
           tenetur fugit nesciunt soluta, hic dolor. Sunt blanditiis aperiam.
         </p>
-        {users.map(data => <UserCard src={data}/>)}
+        {users.map((data) => (
+          <UserCard src={data} />
+        ))}
       </div>
     </div>
   );
