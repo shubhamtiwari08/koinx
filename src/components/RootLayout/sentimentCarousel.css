@@ -1,0 +1,7 @@
+.slick-track{
+    height: 6rem;
+}
+
+ul.slick-dots{
+    display: none!important;
+}

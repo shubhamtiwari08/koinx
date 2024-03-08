@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ProgressBar from "../components/ProgressBar";
 import CheckNowCard from "../components/CheckNowCard";
 
@@ -6,8 +6,13 @@ import TradingViewWidget from "../components/TradingViewWidget";
 import { Tabs } from "../components/Tabs";
 import UserCard from "../components/UserCard";
 import SentimentCarousel from "../components/RootLayout/SentimentCarousel";
+import FooterGraph from "../components/RootLayout/FooterGraph";
 
 function Home() {
+
+    const [data, setData] = useState([]);
+
+
   const users = [
     "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D",
     "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D",
@@ -31,14 +36,29 @@ function Home() {
     },
   ];
 
+  const fetchData = async () => {
+    const data = await fetch(
+      "https://api.coingecko.com/api/v3/search/trending"
+    );
+    const res = await data.json();
+    setData(res.coins.slice(0,3));
+   
+  };
+
+  console.log(data)
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
-    <div className="p-4 bg-gray-200">
-      <TradingViewWidget />
-      <div className="w-[60%] h-max bg-gray-200 mx-4 rounded-md">
+    <div className="p-4 bg-gray-200 flex">
+      <div className="border-2 w-3/4">
+      
+      <div className="w-[90%] h-max bg-gray-200 mx-4 rounded-md">
         <Tabs />
       </div>
 
-      <div className="w-[60%] h-max bg-white mx-4 rounded-md p-4">
+      <div className="w-[90%] h-max bg-white mx-4 rounded-md p-4">
         <h2 className="text-xl text-black font-bold">Performance</h2>
         <div>progress bars 2</div>
         <div>
@@ -135,11 +155,11 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="w-[60%] h-max bg-white mx-4 rounded-md p-4 mt-5">
+      <div className="w-[90%] h-max bg-white mx-4 rounded-md p-4 mt-5">
         <h2 className="text-xl text-black font-bold">Performance</h2>
         <h3 className="font-bold text-gray-600">Key Events</h3>
-        <SentimentCarousel/>
-        
+        <SentimentCarousel />
+
         <h3 className="font-bold text-gray-600">Analysts Estimates</h3>
         <div className="flex">
           <div className="w-32 h-32 rounded-full bg-green-100 flex items-center justify-center mt-5">
@@ -164,7 +184,7 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="w-[60%] h-max bg-white mx-4 mt-5 border-b-2 rounded-md p-4">
+      <div className="w-[90%] h-max bg-white mx-4 mt-5 border-b-2 rounded-md p-4">
         <h2 className="text-xl text-black font-bold mb-5">About Bitcoin</h2>
         <h3 className="text-black font-bold mb-2">What is Bitcoin?</h3>
         <p className="border-b-2 pb-4">
@@ -202,7 +222,7 @@ function Home() {
           <CheckNowCard title={"Calculate your tax liability"} color={"red"} />
         </div>
       </div>
-      <div className="w-[60%] h-max bg-white mx-4 mt-5 border-b-2 rounded-md p-4">
+      <div className="w-[90%] h-max bg-white mx-4 mt-5 border-b-2 rounded-md p-4">
         <h2 className="text-2xl text-black font-bold my-5">Tokenomics</h2>
         <h3 className="text-black text-xl font-bold my-2">
           Initial Distribution
@@ -220,7 +240,7 @@ function Home() {
           quidem?
         </p>
       </div>
-      <div className="w-[60%] h-max bg-white mx-4 mt-5 border-b-2 rounded-md p-4">
+      <div className="w-[90%] h-max bg-white mx-4 mt-5 border-b-2 rounded-md p-4">
         <h2 className="text-2xl text-black font-bold my-5">Team</h2>
         <p className="font-semibold text-gray-600">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
@@ -230,6 +250,36 @@ function Home() {
         {users.map((data) => (
           <UserCard src={data} />
         ))}
+      </div>
+      <div className="w-[90%] h-max bg-white mx-4 mt-5 border-b-2 rounded-md p-4">
+        <h2 className="text-2xl text-black font-semibold my-5">
+          You may also Like
+        </h2>
+
+        <FooterGraph />
+        <h2 className="text-2xl text-black font-semibold my-5">
+          Trending Coins
+        </h2>
+
+        <FooterGraph />
+      </div>
+      </div>
+      <div>
+        <div className="bg-[#0052FE]  rounded-lg p-4 flex flex-col items-center justify-center gap-2">
+        <h2 className="text-2xl text-white font-semibold my-5 text-center">Get Started with KoinX <br /> for FREE</h2>
+        <p className="text-white text-center">with our range of features that you can equip for free , KoinX allows you to be more educated and aware of your tax reports.</p>
+        <img src="https://res.cloudinary.com/dmyost0l3/image/upload/v1709881483/Screenshot_2024-03-08_123135_em9bwm.png" alt="flyer-img" className="w-40 mx-auto"/>
+        <button className="px-2 py-1 bg-white rounded-lg font-semibold my-4">Get Started For Free </button>
+        </div>
+        <div className="w-full h-max bg-white mx-4 mt-5 border-b-2 rounded-md p-4">
+        <h2 className="text-2xl text-black font-semibold ">
+          Trending Coins(24h)
+        </h2>
+        <div>
+           {data.map(coin => <p>{coin.item.name}</p> ) }
+        </div>
+
+        </div>
       </div>
     </div>
   );
